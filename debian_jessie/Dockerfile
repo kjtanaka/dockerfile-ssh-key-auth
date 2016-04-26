@@ -1,7 +1,8 @@
-FROM ubuntu:14.04
+FROM debian:jessie
 MAINTAINER Koji Tanaka <kj.tanaka@gmail.com>
 
-RUN apt-get update && apt-get install -y openssh-server openssh-client && \
+RUN apt-get update && apt-get install -y \
+    openssh-server openssh-client python unzip wget bc rsync && \
     apt-get clean && mkdir /var/run/sshd
 
 RUN mkdir -p /root/.ssh && chmod 700 /root/.ssh && \

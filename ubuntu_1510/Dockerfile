@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:15.10
 MAINTAINER Koji Tanaka <kj.tanaka@gmail.com>
 
 RUN apt-get update && apt-get install -y openssh-server openssh-client && \
