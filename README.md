@@ -5,8 +5,8 @@ This is a collection of Dockerfiles that allow SSH Key Authentication.
 ## Download Dockerfiles
 
 ```bash
-$ git clone https://github.com/kjtanaka/dockerfiles.git
-$ cd dockerfiles
+$ git clone https://github.com/kjtanaka/dockerfile-ssh-key-auth.git
+$ cd dockerfile-ssh-key-auth
 ```
 
 ## Example Ubuntu 14.04
@@ -21,7 +21,7 @@ docker run -p 2233:22 --name=cn01 -e AUTHORIZED_KEYS="$(cat ~/.ssh/id_rsa.pub)" 
 # Log in to the container
 ssh -p 2233 -l root localhost
 
-# If you want to disable StrictHostKeyChecking, you need to add
-# a few more options.
+# If you want to disable StrictHostKeyChecking, add "-o StrictHostKeyChecking=no"
+# and "-o LogLevel=FATAL" like this.
 ssh -p 2233 -o StrictHostKeyChecking=no -o LogLevel=FATAL -l root localhost
 ```
